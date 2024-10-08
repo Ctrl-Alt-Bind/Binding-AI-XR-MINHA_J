@@ -26,8 +26,50 @@ Unity는 이 포맷을 추론(Interface)할 수 있도록 Sentis package를 제�
 - Unity Korea
 	- [Unity AI 기술 Sentis를 활용해 제작 가능한 AI 콘텐츠 에시 만나보기](https://www.youtube.com/watch?v=0GZ4KJAspJM)
 	- [Unity Sentis와 Hugging Face로 게임에 적합한 AI 모델 찾기](https://unity.com/kr/blog/games/hugging-face-ai-models-and-more-sentis-updates)
-#### 샘플 코드 확인해봐야지
-- Editor version: 6000.0.13f1
+#### 샘플 코드 확인해봐야지  
+> DigitRecognitionSample \  
+> Editor version: 2023.2.0b17 \  
+> [Youtube- Unity Sentis project sample: Build an escape room with a digit detection](https://www.youtube.com/watch?v=IofX0CAYdmU)  
+  
+##### 영상 내용 정리  
+- How to implement that in c#?  
+  - NN를 사용하여 여러 숫자 이미지에 대해 네트워크를 훈련시키고, 플레이어의 이미지를 분류할 수 있다  
+  - Runtime으로 network는 플레이어의 스케치를 분석하고 어떤 숫자인지 분류해냄
+
+**Code (MNISTEngine.cs)**
+`GetMostLikelyDigitProbability()`
+
+``` c#
+// Sends the image to the neural network model and returns the probability that the image is each particular digit.  
+public (float, int) GetMostLikelyDigitProbability(Texture2D drawableTexture)  
+{  
+    inputTensor?.Dispose();  
+  
+    // Convert the texture into a tensor, it has width=W, height=W, and channels=1:      
+	inputTensor = TextureConverter.ToTensor(drawableTexture, imageWidth, imageWidth, 1);  
+    
+    // run the neural network:  
+    engine.Execute(inputTensor);  
+    
+    // We get a reference to the output of the neural network while keeping it on the GPU  
+    TensorFloat result = engine.PeekOutput() as TensorFloat;  
+    
+    // convert the result to probabilities between 0..1 using the softmax function:  
+    var probabilities = ops.Softmax(result);  
+    var indexOfMaxProba = ops.ArgMax(probabilities, -1, false);  
+    
+    // We need to make the result from the GPU readable on the CPU  
+    probabilities.MakeReadable();  
+    indexOfMaxProba.MakeReadable();  
+  
+    var predictedNumber = indexOfMaxProba[0];  
+    var probability = probabilities[predictedNumber];  
+  
+    return (probability, predictedNumber);  
+}
+```
+- 플레이어 스케치를 Texture2D로 받아온 다음 신경망을 호출. Sentis를 사용하여 추론 수행
+- engine.Execute() 하면 CPU/GPU인 Backend model을 취함
 
 
 ----
