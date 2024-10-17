@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.whisper.unity", "com.whisper.unity.csproj", "{53b29c16-af62-1312-fc2e-006bd2eb5d6e}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.whisper.unity.tests", "com.whisper.unity.tests.csproj", "{1623b1b1-19ed-8d51-b31f-5748c589b4a8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{75565c42-3c68-4d49-2732-7ce40c0f3893}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.whisper.unity.editor", "com.whisper.unity.editor.csproj", "{9d3ece72-d9f8-4a76-f62f-3e4b97dd6109}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53b29c16-af62-1312-fc2e-006bd2eb5d6e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53b29c16-af62-1312-fc2e-006bd2eb5d6e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1623b1b1-19ed-8d51-b31f-5748c589b4a8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1623b1b1-19ed-8d51-b31f-5748c589b4a8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75565c42-3c68-4d49-2732-7ce40c0f3893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75565c42-3c68-4d49-2732-7ce40c0f3893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9d3ece72-d9f8-4a76-f62f-3e4b97dd6109}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9d3ece72-d9f8-4a76-f62f-3e4b97dd6109}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
