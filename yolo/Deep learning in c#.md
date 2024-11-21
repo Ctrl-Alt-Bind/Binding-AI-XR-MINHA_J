@@ -18,4 +18,7 @@
 - ONNX Deep Learning in Unity
 	- [Youtube | How to load a Keras model and transform it into ONNX so it can be used in unity](https://youtu.be/7ndUGBzGVvg?si=OMpYsMZf6D2jiPFF)
 	- [Youtube | Load a simple ONNX Deep Learning model in Unity for your own game](https://www.youtube.com/watch?v=R9I9prRUiEo)
-- 
+
+- Barracuda → Sentis인가 보군
+	- [Tistory | 유니티 바라쿠다 튜토리얼 (StyleTransfer-AdaIN)](https://pnltoen.tistory.com/entry/Unity-Barracuda-%EC%9C%A0%EB%8B%88%ED%8B%B0-%EB%B0%94%EB%9D%BC%EC%BF%A0%EB%8B%A4-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-StyleTransfer-AdaIN)
+	- [Tistory | Unity Barracuda 적용 사례 정리(튜토리얼 수준)](https://velog.io/@ji1kang/Unity-Barracuda-%EC%A0%81%EC%9A%A9-%EC%82%AC%EB%A1%80-%EC%A0%95%EB%A6%AC)
